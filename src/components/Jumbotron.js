@@ -25,6 +25,7 @@ const Styles = styled.div`
         z-index: -1;
     }
 
+
 `;
 
 export const Jumbotron = () => (

@@ -1,4 +1,25 @@
 import React, { useState, useEffect } from "react";
+import {Nav, Navbar} from 'react-bootstrap';
+import styled from 'styled-components';
+
+const Styles = styled.div`
+    .navbar{
+        background-color: #222;
+        height: 55px;
+
+
+    }
+    
+    .navbar-brand, .navbar-nav .nav-link{
+        color: #bbb;
+
+        &:hover {
+            color:white;
+        }
+ 
+    }
+
+`;
 
 export const useScroll = callback => {
   const [scrollDirection, setScrollDirection] = useState(true);
@@ -31,6 +52,7 @@ export const useScroll = callback => {
 export default props => {
   const [elementVisible, setElementVisible] = useState(true);
   const { scrollDirection } = props;
+  
 
   // when scroll direction changes element visibility adapts, but can do anything we want it to do
   // U can use ScrollDirection and implement some page shake effect while scrolling
@@ -45,6 +67,26 @@ export default props => {
   }, [scrollDirection]);
 
   return (
+    <Styles>
+        <Navbar expand="lg" fixed="top"
+        style = {{
+            background: `${elementVisible ? "transparent" : "black"}`
+          }}>
+            <Navbar.Brand href="/">Code Life </Navbar.Brand>
+            <Navbar.Toggle area-controls="basic-navbar-nav"/>
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className = "ml-auto">
+                    <Nav.Item><Nav.Link href ="/">Home</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href ="/about">About</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href ="/contact">Contact</Nav.Link></Nav.Item>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+    </Styles>
+  );
+};
+
+/*
     <div
       style={{
         background: "#ff0",
@@ -56,5 +98,4 @@ export default props => {
     >
       element
     </div>
-  );
-};
+    */
