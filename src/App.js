@@ -8,6 +8,7 @@ import {Layout} from './components/Layout';
 import {NavigationBar} from './components/NavigationBar';
 import {Jumbotron} from './components/Jumbotron';
 import CustomElement, { useScroll } from "./components/Element";
+import NavBarNew from './components/NavBarNew';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   });
   return (
     <React.Fragment>
-      <CustomElement scrollDirection={scrollDirection} />
+      <NavBarNew />
       <Jumbotron/>
       <Layout>
         <Router>
