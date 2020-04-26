@@ -8,6 +8,7 @@ const Styles = styled.div`
     .navbar{
         background-color: #222;
         height: 55px;
+        background: transparent;
     }
     
     .navbar-brand, .navbar-nav .nav-link{
@@ -64,7 +65,8 @@ const Styles = styled.div`
     }
 
     .navbar--hidden {
-     top: -70px;
+        background-color: #222;
+        opacity: 0.7
     }
 
 `;
@@ -91,7 +93,8 @@ export default class NavBarNew extends React.Component {
     const { prevScrollpos } = this.state;
 
     const currentScrollPos = window.pageYOffset;
-    const visible = prevScrollpos > currentScrollPos;
+    //const visible = prevScrollpos > currentScrollPos;
+    const visible = currentScrollPos < 445;
 
     this.setState({
       prevScrollpos: currentScrollPos,
