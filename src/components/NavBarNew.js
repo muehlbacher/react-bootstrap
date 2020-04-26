@@ -94,7 +94,7 @@ export default class NavBarNew extends React.Component {
 
     const currentScrollPos = window.pageYOffset;
     //const visible = prevScrollpos > currentScrollPos;
-    const visible = currentScrollPos < 445;
+    const visible = currentScrollPos < window.screen.height - window.screen.height/8;
 
     this.setState({
       prevScrollpos: currentScrollPos,

@@ -19,9 +19,9 @@ function App() {
     setScrollDirection(direction);
   });
   return (
-    <React.Fragment>
+    <React.Fragment style = "z-index: -99;">
       <NavBarNew />
-      <Jumbotron/>
+      <Jumbotron style = "z-index: -10;"/>
       <Layout>
         <Router>
           <Switch>
